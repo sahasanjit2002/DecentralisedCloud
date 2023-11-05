@@ -25,7 +25,6 @@ database.once('connected', () => {
 
 // get all pending request
 app.post('/getPending',async(req,res) => {
-    console.log(req.body)
     try{
         const data = await Access.find({requested: req.body.requested});
         res.status(200).json(data)
@@ -53,7 +52,6 @@ app.post('/writePending',async(req,res) => {
 app.put('/grant',async(req,res) => {
     const filter = { requester: req.body.requester, requested: req.body.requested };
     const update = { $set: { access: true } };
-    console.log(req.body)
     // Update the document
     try{
         const result = await Access.updateOne(filter, update);
@@ -88,10 +86,8 @@ app.delete('/revoke',async(req,res) => {
 // update grant and revoke
 
 app.post('/grantList',async(req,res) => {
-    console.log(req.body)
     try{
         const data = await Access.find({requester: req.body.requester, access: true});
-        console.log(await data)
         res.status(200).json(data)
     }
     catch(error){
