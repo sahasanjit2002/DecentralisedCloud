@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import backup from './PdfImage.jpg'
 const Display = ({account, contract}) => {
   const[data, setData] = useState(null)
 
@@ -28,17 +28,12 @@ const Display = ({account, contract}) => {
             <img
               src={element}
               alt="new"
-              style={{ height: "200px", width: "200px" }}
-              onError={() => {
+              style={{ height: "133px", width: "200px" }}
+              onError={(e) => {
                 // Handle image loading error here
                 console.log(`Image ${i} failed to load`);
                 // Replace the image with a PDF viewer or any other content
-                return (
-                  <iframe
-                    src={element}
-                    style={{ width: "200px", height: "200px" }}
-                  ></iframe>
-                );
+                e.target.src = backup; // Replace with the path to your PDF viewer image
               }}
             />
           </a>
@@ -85,7 +80,12 @@ const Display = ({account, contract}) => {
       </button>
       
       </div>
-      <div>{data}</div>
+      <hr/>
+      {data&& <h1 className='text-md text-white rounded-md mt-3 font-bold bg-gray-600'>Uploaded Data</h1>}
+      <div className=' grid grid-cols-3 bg-gray-100 overflow-auto max-h-96'>
+        
+        {data}
+        </div>
     </div>
   )
 }
