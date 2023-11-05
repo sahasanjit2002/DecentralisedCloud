@@ -7,7 +7,7 @@ import FileUpload from "./Components/FileUpload";
 import Display from "./Components/Display";
 import Modal from "./Components/Modal" 
 import "./App.css";
-
+import Navbar from './Components/Navbar';
 function App() {
   const [account, setAccount] = useState(""); //metamask account
   const [contract, setContract] = useState(null); //hardhat contract info
@@ -52,17 +52,37 @@ function App() {
 
     provider && loadProvider();
   }, []);
-
+  
   console.log(contract, account)
-
-  return <div className="App">
+  return <div className="App absolute inset-0 bottom-10 bg-bottom bg-no-repeat bg-slate-50 dark:bg-[#0B1120] index_beams__yWcJT">
+    <Navbar account={account}/>
+    <br/>
+    <div className=" justify-items-center text-center">
+      <FileUpload account={account} contract = {contract} provider={provider}/>
+    </div>
+    <div className="grid grid-cols-2 gap-4 container mt-4">
+    {/* <div className="">
     <h2>Account : {account ? account : "Metamask is not connected"}</h2>
-    <FileUpload account={account} contract = {contract} provider={provider}/>
+    {/* <FileUpload account={account} contract = {contract} provider={provider}/> }
+    </div> */}
+    <div className=" mx-3 px-3 text-center container border border-slate-800 border-l-0 border-x-0 border-y-0 border-r">
     <Display account={account} contract={contract}/><br/>
+    
+    </div>
+    <div className="text-center ">
+    
+    {
+      <Modal account={account} contract={contract}/>
+    }
+      </div>
+    </div>
+    {/* <h2>Account : {account ? account : "Metamask is not connected"}</h2>
+    <FileUpload account={account} contract = {contract} provider={provider}/> */}
+    {/* <Display account={account} contract={contract}/><br/>
     {
       (!modalOpen)?<button onClick={()=>setModalOpen(true)}>Share</button>:
       <Modal account={account} contract={contract} setModalOpen={setModalOpen}/>
-    }
+    } */}
   </div>;
 }
 
