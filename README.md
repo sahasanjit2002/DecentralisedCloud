@@ -12,7 +12,7 @@ Download the zip file // ```git clone https://github.com/sahasanjit2002/Decentra
 On Decentralized Folder run the following commands
  ```shell
 npx hardhat node
-npx run --network localhost scripts/deploy.js
+npx hardhat run --network localhost scripts/deploy.js
 ```
 On Server Folder run the following command
 ```shell
