@@ -2,7 +2,7 @@
 
 import React,{useState,useEffect} from 'react'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
-
+import image from './logo192.png'
 
 
 export default function ExampleNavbarFour(props) {
@@ -19,6 +19,7 @@ export default function ExampleNavbarFour(props) {
       <div className="mx-auto flex max-w-full items-center justify-between px-4 py-2 sm:px-8 lg:px-6">
         <div className="inline-flex items-center space-x-2">
           <span>
+            <img src={image} className="h-8 w-8" />
           </span>
           <span className="font-bold text-gray-100">Decentralized Fileverse</span>
         </div>
