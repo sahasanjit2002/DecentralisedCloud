@@ -57,9 +57,11 @@ function App() {
   return <div className="App absolute inset-0 bottom-10 bg-bottom bg-no-repeat bg-slate-50 dark:bg-[#0B1120] index_beams__yWcJT">
     <Navbar account={account}/>
     <br/>
+    
     <div className=" justify-items-center text-center">
       <FileUpload account={account} contract = {contract} provider={provider}/>
     </div>
+    <div className="flex flex-col items-center justify-center mt-20 h-screen ">
     <div className="grid grid-cols-2 gap-4 container mt-4">
     {/* <div className="">
     <h2>Account : {account ? account : "Metamask is not connected"}</h2>
@@ -75,6 +77,7 @@ function App() {
       <Modal account={account} contract={contract}/>
     }
       </div>
+    </div>
     </div>
     {/* <h2>Account : {account ? account : "Metamask is not connected"}</h2>
     <FileUpload account={account} contract = {contract} provider={provider}/> */}

@@ -19,11 +19,7 @@ const Display = ({account, contract}) => {
 
       //basically the links are stored in blockchain
       console.log(dataArray)
-    } catch (error) {
-      alert("Don't have permission")
-    }
-
-    const isEmpty = Object.keys(dataArray).length === 0;
+      const isEmpty = Object.keys(dataArray).length === 0;
 
     if(!isEmpty){
       const image = dataArray.map((element, i) => {
@@ -52,6 +48,11 @@ const Display = ({account, contract}) => {
     }else{
       alert("No image to Display")
     }
+    } catch (error) {
+      alert("Don't have permission")
+    }
+
+  
   }
   return (
     <div>
