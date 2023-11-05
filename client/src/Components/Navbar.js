@@ -2,7 +2,7 @@
 
 import React,{useState,useEffect} from 'react'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
-
+import image from './logo192.png'
 
 
 export default function ExampleNavbarFour(props) {
@@ -12,28 +12,26 @@ export default function ExampleNavbarFour(props) {
     setIsMenuOpen(!isMenuOpen)
   }
   useEffect(()=>{
-    setAccount(account)
+    setAccount(props.account)
   },[props.account])
-  console.log(account)
   return (
-    <div className="relative w-full bg-blue-500 ">
+    <div className="relative w-full bg-gray-900 ">
       <div className="mx-auto flex max-w-full items-center justify-between px-4 py-2 sm:px-8 lg:px-6">
         <div className="inline-flex items-center space-x-2">
           <span>
-            <img src = "../public/logo192.png" alt='Logo'></img>
+            <img src={image} className="h-8 w-8" />
           </span>
-          <span className="font-bold">Decentralized File Storage</span>
+          <span className="font-bold text-gray-100">Decentralized Fileverse</span>
         </div>
         {/* <div className="hidden lg:block">
           
         </div> */}
-        <div className="flex grow justify-end">
-          <h2 className=''>{account? account : 'Metamask not Connected'}</h2>
+        <div className="flex grow justify-end ">
+          
         </div>
         <div className="ml-2 mt-2 hidden lg:block">
           <span className="relative inline-block">
-            {/* IMAGE */}
-            {/* <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-600 ring-2 ring-white"></span> */}
+          <h2 className='text-gray-100 '>{account ? account : 'Metamask not Connected'}</h2>
           </span>
         </div>
         <div className="ml-2 lg:hidden">
@@ -59,7 +57,7 @@ export default function ExampleNavbarFour(props) {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">Decentralized File Storage</span>
+                    <span className="font-bold text-gray-900">Decentralized File Storage</span>
                   </div>
                   <div className="-mr-2">
                     <button

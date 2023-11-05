@@ -62,7 +62,6 @@ const Modal = ({ account, contract }) => {
       </div>
 
       {/* grant access and notif field*/}
-      <h3>Share with</h3>
     </div>
   )
 }
